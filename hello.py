@@ -42,9 +42,10 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 
-class NameForm(FlaskForm):
-    name = StringField('What is your name?', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+class Post(db.model):
+    __tablename__ = 'post'
+    id = db.Column(db.Integer,primary_key=True)
+    
 
 
 @app.errorhandler(404)
